@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.min.css" />
+    <title>JavaScript Basis</title>
+  </head>
+  <body>
+
+    <main class="main">
+      <div class="container " style="display: none;">
+        <h1>Get Started </h1>
+
+        <h2>Calculator</h2>
+        <div class="calculate">
+          <input class="calculate__input" type="number" id="input1" >
+          <input class="calculate__input" type="number" id="input2">
+          <div class="calculate__wrapper">
+            <button class="calculate__btn plus" id="plus"> + </button>
+            <button class="calculate__btn minus" id="minus"> - </button>
+          </div>
+            <button class="calculate__btn" id="calculateBtn" style="background-color: #ebe8e81e;">calculate</button>
+          <div class="calculate__result" id="result">your result: </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <h2>Notes</h2>
+        <div class="notes">
+          <input class="notes__text" id="title" type="text" placeholder="wirte name">
+          <button class="notes__btn-add" id="create">add</button>
+          <ul class="notes__list" id="list">
+            <!-- <li class="notes__wrapper">
+              <span>Name</span>
+              <div >
+                <span class="notes__btn red-btn">&#10003;</span>
+                <span class="notes__btn green-btn">&#935;</span>
+              </div>
+            </li> -->
+          </ul>
+        </div>
+      </div>
+    </main>
+
+
+   <script defer src="main.js"></script>
+   <script src="theory.js"></script>
+  </body>
+</html>

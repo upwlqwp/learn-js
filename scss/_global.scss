@@ -1,0 +1,67 @@
+body{
+    color: $white;
+    font-family: $font-default;
+    background-color: $background;
+    color: $white;
+    font-size: 16px;
+    height: 100vh;
+}
+
+.wrapper{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main{
+  flex-grow: 1;
+}
+
+a{
+    color: $white;
+    transition: color 0.4s, ease-in-out;
+
+    &:hover{
+        color: $accent;
+    }
+}
+
+.container{
+    padding: 0 15px;
+    width: 1230px;
+    margin: 0 auto;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+  }
+
+  .title{
+    font-weight: 700;
+    font-size: 36px;
+  }
+
+  .none{
+    display: none;
+  }
+
+  .btn-red{
+    background-color: rgb(184, 7, 7);
+  }
+
+  .btn-green{
+    background-color: rgb(34, 114, 20);
+  }
+
+  .btn-orange{
+    background-color: #f1bc41;
+  }
