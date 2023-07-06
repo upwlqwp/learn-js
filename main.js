@@ -1,6 +1,7 @@
 "use strict";
 
 /* Make Calculator */
+/* 
 
 const input1 = document.getElementById("input1"),
   input2 = document.getElementById("input2"),
@@ -47,65 +48,106 @@ calculateBtn.addEventListener('click', () => {
 
 
 })
+*/
+
 
 /* Make notes list */
-
-
-const inputElement = document.getElementById('title'),
-  createBtn = document.getElementById('create'),
-  listElement = document.getElementById('list');
-
-
-
-createBtn.addEventListener('click', () => {
-
-  if (inputElement.value.length === 0) {
-    return
-  }
-  const newNote = {
-    title: inputElement.value,
-    completed:false,
-  }
-
-  listElement.insertAdjacentHTML('beforeend',getNoteTemplate(newNote))
-
-  inputElement.value = ''
-
-})
+/** 
+const inputElement = document.getElementById('title')
+const createBtn = document.getElementById('create')
+const listElement = document.getElementById('list')
 
 
 const notes = [
   {
-    title: 'wirte some text',
-    completed: false,
+    title: 'write your text',
+    completed: true,
   },
 
   {
-    title: 'ack some questions',
-    completed: true,
+    title: 'go to school',
+    completed: false,
   }
 ]
 
 function render() {
-  for (let note of notes){
-    listElement.insertAdjacentHTML('beforeend', getNoteTemplate(note))
+  listElement.innerHTML = ''
+  if(notes.length === 0){
+    listElement.innerHTML = '<p> Not new notes</p>'
   }
+  for (let i = 0; i < notes.length; i++) {
+    listElement.insertAdjacentHTML(
+      'beforeend',
+      getNoteComplate(notes[i], i),
+
+    )
+  }
+
 }
 
 render()
 
 
- 
-function getNoteTemplate(note) {
-  
+
+function getNoteComplate(note, index) {
   return `
-          <li class="notes__wrapper">
-            <span class="${note.completed ? 'text-decoration-line-through' : ''}">${note.title}</span>
-            <div >
-              <span class="notes__btn btn-${note.completed ? 'orange' : 'green' }">&#10003;</span>
-              <span class="notes__btn btn-red">&#935;</span>
-            </div>
-          </li>
-`
-  
+        <li class="notes__wrapper">
+             <span class="${note.completed ? 'text-decoration-line-through' : ''}"
+             >${note.title}</span>
+               <div >
+              <span 
+              class="notes__btn btn-${note.completed ? 'yelow' : 'green'} " 
+              data-index="${index}"
+              data-type="toggle"
+              >&#10003;</span>
+
+               <span 
+               class="notes__btn btn-red" 
+               data-index="${index}"
+               data-type="remove"
+               >&#935;</span>
+              </div>
+              </li>
+        `
 }
+
+createBtn.addEventListener('click', () => {
+  if (inputElement.value.length === 0) {
+    return
+  }
+
+  const newNote = {
+    title: inputElement.value,
+    completed: false,
+  }
+
+  notes.push(newNote)
+  render()
+  inputElement.value = ''
+
+
+})
+
+
+listElement.addEventListener('click', (e) => {
+
+  if (e.target.dataset.index){
+    const index = parseInt(e.target.dataset.index)
+    const type = e.target.dataset.type
+
+    if (type === 'toggle'){
+      notes[index].completed = !notes[index].completed
+    }
+    else if ( type === 'remove'){
+      notes.splice(index, 1)
+    }
+  }
+
+  render()
+
+})
+
+*/
+
+
+
