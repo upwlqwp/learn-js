@@ -150,4 +150,6 @@ listElement.addEventListener('click', (e) => {
 */
 
 
+/* Number, string, data */
+
 
