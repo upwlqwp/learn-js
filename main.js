@@ -1,8 +1,10 @@
 "use strict";
 
-/* Make Calculator */
-/* 
+// debugger
 
+/* Make Calculator */
+
+/*
 const input1 = document.getElementById("input1"),
   input2 = document.getElementById("input2"),
   plusBtn = document.getElementById("plus"),
@@ -48,8 +50,8 @@ calculateBtn.addEventListener('click', () => {
 
 
 })
-*/
 
+*/
 
 /* Make notes list */
 /** 
@@ -149,7 +151,87 @@ listElement.addEventListener('click', (e) => {
 
 */
 
+/* Reduce
+function sumAll(... numbers) {
+  // let res = 0 
+  // for(let num of numbers){
+  //  res += num
+  // }
+
+  //  return res
+
+ 
+return numbers.reduce((acc, cur) => (acc += cur), 0)
+}
+
+console.log(sumAll(1, 3, 4, 2, 9))
+*/
+
+/* Closures Замыкание*/
+/*
+function createPerson(name) {
+ return function (lastName) {
+  console.log(name + ' ' + lastName)
+ }
+}
+
+const addLastName = createPerson('Yuri')
+
+addLastName('Martirosyan')
+addLastName('Adams')
+*/
+
 
 /* Number, string, data */
 
+/* Date() 
 
+
+let mode = 'time'
+const output = document.getElementById('output')
+const btnFull = document.getElementById('full')
+const btnDate = document.getElementById('date')
+const btnTime = document.getElementById('time')
+
+// btnFull.onclick = () => {mode = 'full', update()}
+// btnDate.onclick = () => {mode = 'date', update()}
+// btnTime.onclick = () => {mode = 'time', update()}
+
+function bindMode(name) {
+  return () => {
+    mode = name
+    update()
+  }
+}
+
+btnFull.onclick = bindMode('full')
+btnTime.onclick = bindMode('time')
+btnDate.onclick = bindMode('date')
+
+setInterval(update, 10000)
+update()
+
+function update(){
+  output.textContent = format(mode)
+}
+
+function format(formatMode) {
+
+  const now = new Date()
+
+  switch (formatMode) {
+    case 'time':
+      return now.toLocaleTimeString()
+      
+    case 'date':
+      return now.toLocaleDateString()
+      
+    case 'full':
+      return now.toLocaleTimeString() + ' ' + now.toLocaleDateString();
+     
+    default: now.toLocaleTimeString();
+
+  }
+}
+
+*/

@@ -256,3 +256,27 @@ a:hover {
 .text-decoration-line-through {
   text-decoration: line-through;
 }
+
+.date {
+  color: #121212;
+  min-height: 120px;
+  max-width: 300px;
+  padding: 15px;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 12px;
+}
+.date__btn {
+  border-radius: 50px;
+  padding: 5px 10px;
+  color: #fff;
+}
+.date__btn--full {
+  background-color: #1c6196;
+}
+.date__btn--date {
+  background-color: #ec1515;
+}
+.date__btn--time {
+  background-color: #116911;
+}
