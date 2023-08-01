@@ -235,3 +235,58 @@ function format(formatMode) {
 }
 
 */
+
+/* Destructuring assignment */
+/*
+let userName = 'Jhon'
+let userAge = 23
+let userCity = 'New York'
+
+let user = {
+  name: 'Jhon',
+  age: 23,
+  city: 'New York',
+}
+
+let {age, city} = user
+
+console.log(age, city)
+
+*/
+/*
+function createParamForm(obj) {
+  const form = document.createElement('form')
+  const input = document.createElement('input')
+  const btn = document.createElement('button')
+
+let {placeholder, type, btnText} = obj
+
+  input.placeholder = placeholder
+  input.type = type
+
+  btn.textContent = btnText
+
+  form.append(input, btn)
+
+  return {
+    form,
+    input,
+    btn,
+  }
+}
+const {form, input, btn} = createParamForm({
+  placeholder: 'age',
+  type: 'number',
+  btnText: 'get'
+})
+
+input.style.borderRadius = '12px'
+btn.style.borderRadius = '12px'
+input.style.padding = '5px'
+input.style.marginRight = '10px'
+btn.style.padding = '5px'
+btn.style.backgroundColor = 'white'
+btn.style.color = 'black'
+
+document.getElementById('app').append(form)
+ */
